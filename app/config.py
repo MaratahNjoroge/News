@@ -23,4 +23,7 @@ class DevConfig(Config):
 
     '''
 
+    DEBUG = True  #debugging mode activated thoughout the application
+    
+
          
