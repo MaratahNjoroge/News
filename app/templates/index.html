@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+    <!-- styles block -->
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/inde.css')}}">
+{% endblock %}
+    <!-- content block -->
+  {% block content %}
+
+    <!-- scoop section  -->
+  <h1>The Scoop!!</h1>
+    <ul>
+        {{ macro.displayBlogList(scoop)}}
+    </ul>
+  <!-- upcoming -->
+   <h1>Sports section</h1>
+     <ul>
+       {{ macro.displayBlogList(sports)}}
+     </ul>
+  <!-- popular -->
+    <h1>Politics</h1>
+    <ul>
+      {{ macro.displayBlogList(politics}}
+    </ul>
+
+

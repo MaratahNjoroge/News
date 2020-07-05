@@ -1,0 +1,8 @@
+{% macro displayBloglist(blog_list) %}
+
+    {% for blog in blog_list %}
+        <li>{{ blog.title }}</li>
+     {% endfor %}
+     
+     <!-- look here!! -->
+{% endmacro %}     
