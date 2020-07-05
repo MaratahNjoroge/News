@@ -7,7 +7,7 @@ Blog = blog.Blog
 #api key
 api_key = app.config['BLOG_API_KEY']
 
-base_url = app.config["BLOG_API_BASE_URL"]
+base_url = app.config['BLOG_API_BASE_URL']
 
 def get_blogs(category):
     '''
@@ -41,17 +41,17 @@ def process_results(blog_list):
     '''
     blog_results = []
     for blog_item in blog_list:        
-        id = blog_item.get('id')
-        kind = blog_item.get('kind')
+        id = blog_item.get('id')        
         title = blog_item.get('title')
-        name = blog_item.get('author_name')
+        name = blog_item.get('name')
+        author = blog_item.get('author')
         description = blog_item.get('description')
-        published = blog_item.get('date_published')
-        updated = blog_item.get('date_updated')
-        url = blog_item.get('blog_path')
+        publishedAt = blog_item.get('date_published')
+        content = blog_item.get('blog_content')
+       
 
-        if url:
-            blog_object = Blog(id,kind,title,name,description,published,updated,url)
+        if content:
+            blog_object = Blog(id,title,name,author,description,publishedAt,content)
             blog_results.append(blog_object) 
 
     return blog_results
