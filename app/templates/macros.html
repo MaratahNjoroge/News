@@ -1,8 +1,44 @@
-{% macro displayBloglist(blog_list) %}
 
-    {% for blog in blog_list %}
-        <li>{{ blog.title }}</li>
-     {% endfor %}
-     
-     <!-- look here!! -->
-{% endmacro %}     
+{% macro displaySourcesList(sources) %}
+        {% for source in sources %}
+        <div class="overlay" >
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #2E282A;">
+            <a href='/articles/{{source.id}}'>
+              <h3 style="font-weight:bold">{{ source.name}}</h3>
+            </a>
+            <h5 style="color: #1E1E24;">{{source.category.upper()}}</h5>
+
+            <div class="well" style="height:100px; background-color:#17BEBB;">
+                <p style="font-weight:bold">{{ source.description|truncate(150)}}</p>
+            </div>
+
+          </div>
+          </div>
+
+        {% endfor %}
+{% endmacro %}
+
+<!-- Display articles -->
+{% macro displayArticleList(article_list) %}
+    {% for article in article_list %}
+    <!-- print source here -->
+    <div class="overlay">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #2E282A;">
+              <li class="well" style="list-style:none;background-color:#CD5334;">
+                  <a href="{{article.url}}"style="text-decoration:none;">
+                    <h3 style="font-size:16px;color:#FFFFFF">
+                        {{article.title}}
+                    </h3>
+                     <p style="font-size:10px;">  Date: {{article.publishedAt[:10]}} </p>
+                    <p style="font-size:12px; color:black;">{{article.description|truncate(70)}}</p>
+                    <a href="{{ article.url }}" class="article-link" style="color:#A8201A;"> Read more...</a>
+                    <img src='{{article.urlToImage}}' width="" height="" class="img-responsive">
+
+              </li>
+      </div>
+      </div>
+
+
+    {% endfor %}
+
+{% endmacro %}

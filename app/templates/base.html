@@ -1,6 +1,12 @@
-{% extends 'bootstrap/base.html'%}
-<!-- navbar block -->
-{ % block navbar %}
-    {% include 'navbar.html' %}
+{% extends 'bootstrap/base.html' %}
 
-{% enblock %}
+
+
+ 
+    <!-- Content Block -->
+    {% block content %} {% endblock %}
+
+    <!-- Navbar block  -->
+    {% block navbar %} {% include 'navbar.html' %} {% endblock %}
+
+
