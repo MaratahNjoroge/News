@@ -2,7 +2,7 @@
 {% macro displaySourcesList(sources) %}
         {% for source in sources %}
         <div class="overlay" >
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #2E282A;">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #FFFFFF;">
             <a href='/articles/{{source.id}}'>
               <h3 style="font-weight:bold">{{ source.name}}</h3>
             </a>
@@ -23,8 +23,8 @@
     {% for article in article_list %}
     <!-- print source here -->
     <div class="overlay">
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #2E282A;">
-              <li class="well" style="list-style:none;background-color:#CD5334;">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: #FFFFFF;">
+              <li class="well" style="list-style:none;background-color:#17BEBB;">
                   <a href="{{article.url}}"style="text-decoration:none;">
                     <h3 style="font-size:16px;color:#FFFFFF">
                         {{article.title}}
